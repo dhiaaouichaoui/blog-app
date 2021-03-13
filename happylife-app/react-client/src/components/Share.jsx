@@ -15,8 +15,8 @@ class Share extends React.Component{
 
     }
    
-    sharepost(e){
-        e.preventDefault()
+    sharepost(){
+       
         axios.post('/api/life',this.state)
         .then(response=>{
             console.log(response.data)
@@ -30,13 +30,14 @@ class Share extends React.Component{
         return(
             <div className="shares">
                 {console.log(this.state)}
-                <div>
+                <div className="shares">
             <form>
                 <input className="create-input" type="text"  placeholder="Post Title" onChange={(e)=>this.setState({title:e.target.value})} ></input>
                 <input className="create-input" type="text"  placeholder="Post Name" onChange={(e)=>this.setState({name:e.target.value})}></input>
                 <input className="create-input" type="text"  placeholder="Image URL"onChange={(e)=>this.setState({image:e.target.value})}></input>
                 <textarea  className="create-body-textarea"  placeholder="Post Body" onChange={(e)=>this.setState({body:e.target.value})}></textarea>
-                <button className="create-submit-button" type="submit"  onClick={(e)=>this.sharepost(e)}>Share post</button>
+                <button className="create-submit-button" type="submit"  onClick={
+                    this.sharepost}>Share post</button>
             </form>
             
              </div>

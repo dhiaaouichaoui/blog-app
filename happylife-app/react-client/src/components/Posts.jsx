@@ -7,6 +7,8 @@ class Posts extends React.Component {
     this.state={
       update: false,
       updatedbody:''
+      
+      
     }
     this.handleupdate=this.handleupdate.bind(this)
   }
@@ -45,7 +47,7 @@ class Posts extends React.Component {
             </li>
           })}
         </ul>
-      </div>
+      </div> 
     )
   }
 

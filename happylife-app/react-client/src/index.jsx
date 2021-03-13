@@ -9,7 +9,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
       this.state={
-        view: 'share',
+        view: 'shares',
         data:[]
       }
     this.changeView=this.changeView.bind(this)
@@ -32,11 +32,11 @@ class App extends React.Component {
   handleview(){ 
     
       const {view,data} = this.state;
-      if (view === 'share') {
-        return <Share  handleClick={() => this.changeView()}/>
+      if (view === 'shares') {
+        return <Share   handleClick={() => this.changeView()}/>
       } else if(view === 'post'){
         console.log(view)
-        return <div>Posts<Posts data={data}  /></div>
+        return <div><Posts data={data}  /></div>
         }
        
   }
@@ -47,7 +47,7 @@ class App extends React.Component {
       <div className="nav">
         <div>
         <span className="logo"
-          onClick={() => this.changeView('post')}>
+          onClick={() => this.changeView('shares')}>
           HAPPY LIFE
         </span>
         </div>
